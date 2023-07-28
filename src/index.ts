@@ -284,5 +284,4 @@ const validateStartsWith = (fieldname: string, value: any, rule: string, message
 }
 
 
-
 export default validator
