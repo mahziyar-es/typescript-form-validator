@@ -285,19 +285,4 @@ const validateStartsWith = (fieldname: string, value: any, rule: string, message
 
 
 
-
-
-
-
-
-
-await validator([
-    {"name": undefined, rules: ['required'], messages: {'required': 'enter the name'} },
-])
-
-// const res = await validator([
-//     {"fieldname": "asd", rules: ['regex:^[a-zA-Z]*$']},
-// ], false)
-
-
 export default validator
