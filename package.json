@@ -1,0 +1,45 @@
+{
+  "name": "typescript-form-validator",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Typescript Form Validator",
+  "keywords": [
+    "typescript",
+    "form",
+    "validator",
+    "form validator",
+    "typescript validator",
+    "javascript",
+    "field validator"
+  ],
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "author": {
+    "name": "Mahziyar Esmaili",
+    "email": "mahziyar.esmaili.dev@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahziyar-es/typescript-form-validator.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-dts": "^3.3.1",
+    "vitest": "^0.33.0"
+  },
+  "dependencies": {
+  }
+}
