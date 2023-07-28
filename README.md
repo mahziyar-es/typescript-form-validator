@@ -88,9 +88,18 @@ try{
     {"fieldname": "abc", rules: ['max_length:5']},
 
     // value should be equal to the specified value
+    // if equal is used with one value e.g equal:abc
+    // the validation error will be like this:
+    //  fieldname should be equal to 'abc' .
     {"fieldname": "abc", rules: ['equal:abc']},
+    // however, you can use equal as below too:
+    {"fieldname1": "abc", rules: ['equal:fieldname2,abc']},
+    // this way, abc and abc will be compared but the error will be:
+    // fieldname1 should be equal to fieldname2
+    // this is useful for comparing things like password and password confirmation
 
     // value should NOT be equal to the specified value
+    // same usage as "equal" rule...
     {"fieldname": "123", rules: ['not_equal:abc']},
 
     // value should be one of the specified values
