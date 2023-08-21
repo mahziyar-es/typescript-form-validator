@@ -1,7 +1,7 @@
 {
   "name": "typescript-form-validator",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Typescript Form Validator",
   "keywords": [
     "typescript",
@@ -12,8 +12,8 @@
     "javascript",
     "field validator"
   ],
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.es.js",
+  "main": "dist/index.cjs.ts",
+  "module": "dist/index.es.ts",
   "types": "dist/index.d.ts",
   "type": "module",
   "license": "MIT",
