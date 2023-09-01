@@ -26,6 +26,7 @@ const validator =  async (
             |"file"
             |`min:${number}` 
             |`max:${number}` 
+            |`length:${number}` 
             |`min_length:${number}` 
             |`max_length:${number}` 
             |`equal:${string|number}` 
@@ -69,6 +70,7 @@ const validator =  async (
                 if(rule == 'file') validateFile(fieldname, fieldValue, messages?.['file'])
                 if(rule.startsWith('min:')) validateMin(fieldname, fieldValue, rule, messages?.['min'])
                 if(rule.startsWith('max:')) validateMax(fieldname, fieldValue, rule, messages?.['max'])
+                if(rule.startsWith('length:')) validateLength(fieldname, fieldValue, rule, messages?.['length'])
                 if(rule.startsWith('min_length:')) validateMinLength(fieldname, fieldValue, rule, messages?.['min_length'])
                 if(rule.startsWith('max_length:')) validateMaxLength(fieldname, fieldValue, rule, messages?.['max_length'])
                 if(rule.startsWith('in:')) validateIn(fieldname, fieldValue, rule, messages?.['in'])
@@ -217,6 +219,16 @@ const validateRegex = (fieldname: string, value: any, rule: string, message ?: s
     try { regex = new RegExp(rule.split('regex:')[1].trim()) } 
     catch(err){ console.error(`Incorrect format for "regex:" `) }
     if(regex && !regex.test(value)) throw new Error(message ||  messageGen('regex', [fieldname]))
+}
+
+const validateLength = (fieldname: string, value: any, rule: string, message ?: string)=>{
+    let len
+    try { 
+        len = rule.split('length:')[1].trim()
+        if(!isNumber(len)) throw new Error()
+    } 
+    catch(err){ console.error(`Incorrect format for "length:" `) }
+    if(!isString(value) || (len && value.length != len)) throw new Error(message ||  messageGen('length', [fieldname, len as string]))
 }
 
 const validateMinLength = (fieldname: string, value: any, rule: string, message ?: string)=>{

@@ -1,7 +1,7 @@
 {
   "name": "typescript-form-validator",
   "private": false,
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Typescript Form Validator",
   "keywords": [
     "typescript",

@@ -13,6 +13,7 @@ const english = {
     equal:":p must be equal to :p",
     not_equal:":p must not be equal to :p",
     regex: ":p does not match the pattern",
+    length: ":p length must be exactly :p characters",
     min_length: ":p length cannot be less than :p",
     max_length: ":p length cannot be more than :p",
     in: ":p acceptable values are : :p",

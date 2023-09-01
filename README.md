@@ -81,6 +81,9 @@ try{
     // value should be a numeric <= 2
     {"fieldname": 1, rules: ['max:2']},
 
+    // value should be an string with a length == 5 chars
+    {"fieldname": "abcde", rules: ['length:5']},
+
     // value should be an string with a length >= 5 chars
     {"fieldname": "abcdefg", rules: ['min_length:5']},
 
